@@ -1,7 +1,6 @@
 // This file contains the definition of the class RGBColor
 
 #include <math.h>
-
 #include "RGBColor.h"
 
 // -------------------------------------------------------- default constructor

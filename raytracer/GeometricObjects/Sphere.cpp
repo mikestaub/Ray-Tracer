@@ -64,9 +64,10 @@ Sphere::~Sphere(void) {}
 
 
 //---------------------------------------------------------------- hit
-
+// explained on page 57
 bool
 Sphere::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
+
 	double 		t;
 	Vector3D	temp 	= ray.o - center;
 	double 		a 		= ray.d * ray.d;

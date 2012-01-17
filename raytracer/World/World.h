@@ -38,7 +38,7 @@ class World {
 		Tracer*						tracer_ptr;
 		Light*   					ambient_ptr;
 		Camera*						camera_ptr;
-		Sphere 						sphere;		// for Chapter 3 only
+		Sphere sphere; // just for chapt 3
 		vector<GeometricObject*>	objects;
 		vector<Light*> 				lights;
 
@@ -54,7 +54,7 @@ class World {
 		add_object(GeometricObject* object_ptr);
 
 		void
-		add_light(Light* light_ptr); 
+		add_light(Light* light_ptr);
 
 		void
 		set_ambient_light(Light* light_ptr);

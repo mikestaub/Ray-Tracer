@@ -93,13 +93,25 @@ World::render_scene(void) const {
 	int 		vres 	= vp.vres;
 	float		s		= vp.s;
 	float		zw		= 100.0;				// hardwired in
+	int n = (int)sqrt((float)vp.num_samples);
+	Point2D sp;									// sample point in [0, 1] x [0, 1]
+	Point2D pp;									// sample point on a pixel
 
 	ray.d = Vector3D(0, 0, -1);
 
 	for (int r = 0; r < vres; r++)			// up
 		for (int c = 0; c <= hres; c++) {	// across
-			ray.o = Point3D(s * (c - hres / 2.0 + 0.5), s * (r - vres / 2.0 + 0.5), zw);
-			pixel_color = tracer_ptr->trace_ray(ray);
+
+			pixel_color = black;
+			
+			for(int j = 0; j < vp.num_samples; j++) {
+				sp = vp.sampler_ptr->sample_unit_square();
+				pp.x = vp.s * (c - 0.5 * vp.hres + sp.x);
+				pp.y = vp.s * (r - 0.5 * vp.hres + sp.y);
+				ray.o = Point3D(s * (c - hres / 2.0 + 0.5), s * (r - vres / 2.0 + 0.5), zw);
+				pixel_color += tracer_ptr->trace_ray(ray);
+			}
+			pixel_color /= vp.num_samples; // average the colors
 			display_pixel(r, c, pixel_color);
 		}
 }
@@ -108,7 +120,7 @@ World::render_scene(void) const {
 // ------------------------------------------------------------------ clamp
 
 RGBColor
-World::max_to_one(const RGBColor& c) const  {
+World::max_to_one(const RGBColor& c) const {
 	float max_value = max(c.r, max(c.g, c.b));
 
 	if (max_value > 1.0)
@@ -142,7 +154,7 @@ World::clamp_to_color(const RGBColor& raw_color) const {
 // a PC's components will probably be in the range [0, 255]
 // the system-dependent code is in the function convert_to_display_color
 // the function SetCPixel is a Mac OS function
-
+// explained on page 72
 void
 World::display_pixel(const int row, const int column, const RGBColor& raw_color) const {
 	RGBColor mapped_color;
