@@ -36,6 +36,7 @@ Matte::clone(void) const {
 
 Matte&
 Matte::operator= (const Matte& rhs) {
+
 	if (this == &rhs)
 		return (*this);
 
@@ -81,6 +82,7 @@ Matte::~Matte(void) {
 
 RGBColor
 Matte::shade(ShadeRec& sr) {
+
 	Vector3D 	wo 			= -sr.ray.d;
 	RGBColor 	L 			= ambient_brdf->rho(sr, wo) * sr.w.ambient_ptr->L(sr);
 	int 		num_lights	= sr.w.lights.size();

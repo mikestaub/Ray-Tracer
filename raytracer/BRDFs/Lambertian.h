@@ -41,8 +41,8 @@ class Lambertian: public BRDF {
 
 	private:
 
-		float		kd;
-		RGBColor 	cd;
+		float		kd;	// diffuse reflection coefficient
+		RGBColor 	cd;	// diffuse color
 };
 
 

@@ -1,8 +1,3 @@
-// 	Copyright (C) Kevin Suffern 2000-2007.
-//	This C++ code is for non-commercial purposes only.
-//	This C++ code is licensed under the GNU General Public License Version 2.
-//	See the file COPYING.txt for the full license.
-
 #include <algorithm>   // for random_shuffle in Sampler::setup_shuffled_indices
 
 #include "Constants.h"
@@ -174,18 +169,18 @@ Sampler::map_samples_to_unit_disk(void) {
 			}
 			else {					// sector 2
 				r = sp.y;
-				phi = 2 - sp.x / sp.y;
+				phi = 2.0 - sp.x / sp.y;
 			}
 		}
 		else {						// sectors 3 and 4
 			if (sp.x < sp.y) {		// sector 3
 				r = -sp.x;
-				phi = 4 + sp.y / sp.x;
+				phi = 4.0 + sp.y / sp.x;
 			}
 			else {					// sector 4
 				r = -sp.y;
 				if (sp.y != 0.0)	// avoid division by zero at origin
-					phi = 6 - sp.x / sp.y;
+					phi = 6.0 - sp.x / sp.y;
 				else
 					phi  = 0.0;
 			}
@@ -193,8 +188,10 @@ Sampler::map_samples_to_unit_disk(void) {
 
 		phi *= PI / 4.0;
 
-		disk_samples[j].x = r * cos(phi);
-		disk_samples[j].y = r * sin(phi);
+		float px = r * cos(phi);
+		float py = r * sin(phi);
+
+		disk_samples.push_back(Point2D(px, py));
 	}
 	
 	samples.erase(samples.begin(), samples.end());
@@ -256,41 +253,11 @@ Sampler::map_samples_to_sphere(void) {
 // explained on page 101
 Point2D
 Sampler::sample_unit_square(void) {
-	if (count % num_samples == 0)  									// start of a new pixel
+	if (count % num_samples == 0)									// start of a new pixel
 		jump = (rand_int() % num_sets) * num_samples;				// random index jump initialised to zero in constructor
 
 	return (samples[jump + shuffled_indices[jump + count++ % num_samples]]);
 }
-
-
-/*
-
-// ------------------------------------------------------------------- sample_unit_square
-// the first revised version in Listing in Listing 5.8
-
-Point2D
-Sampler::sample_unit_square(void) {
-	if (count % num_samples == 0)  									// start of a new pixel
-		jump = (rand_int() % num_sets) * num_samples;				// random index jump initialised to zero in constructor
-	
-	return (samples[jump + count++ % num_samples]);	
-}
-
-*/
-
-
-
-/*
-
-// ------------------------------------------------------------------- sample_unit_square
-// the original version in Listing 5.7
-
-Point2D
-Sampler::sample_unit_square(void) {
-	return (samples[count++ % (num_samples * num_sets)]);
-}
-
-*/
 
 
 // ------------------------------------------------------------------- sample_unit_disk

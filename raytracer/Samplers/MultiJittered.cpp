@@ -1,8 +1,3 @@
-// 	Copyright (C) Kevin Suffern 2000-2007.
-//	This C++ code is for non-commercial purposes only.
-//	This C++ code is licensed under the GNU General Public License Version 2.
-//	See the file COPYING.txt for the full license.
-
 #include "MultiJittered.h"
 
 // ---------------------------------------------------------------- default constructor
@@ -16,8 +11,7 @@ MultiJittered::MultiJittered(void)
 
 MultiJittered::MultiJittered(const int num_samples)
 	: 	Sampler(num_samples) {
-//	count = 0;
-//	jump = 0;
+
 	generate_samples();
 }
 
@@ -41,7 +35,7 @@ MultiJittered::MultiJittered(const MultiJittered& mjs)
 // ---------------------------------------------------------------- assignment operator
 
 MultiJittered&
-MultiJittered::operator= (const MultiJittered& rhs)	{
+MultiJittered::operator= (const MultiJittered& rhs) {
 	if (this == &rhs)
 		return (*this);
 

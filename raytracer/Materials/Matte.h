@@ -48,7 +48,7 @@ class Matte: public Material {
 
 // ---------------------------------------------------------------- set_ka
 // this sets Lambertian::kd
-// there is no Lambertian::ka data member because ambient reflection 
+// there is no Lambertian::ka data member because ambient reflection
 // is diffuse reflection
 
 inline void
@@ -91,6 +91,5 @@ Matte::set_cd(const float c) {
 	ambient_brdf->set_cd(c);
 	diffuse_brdf->set_cd(c);
 }
-
 
 #endif

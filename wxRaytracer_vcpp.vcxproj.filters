@@ -126,6 +126,54 @@
     <ClCompile Include="raytracer\Tracers\Tracer.cpp">
       <Filter>Tracers</Filter>
     </ClCompile>
+    <ClCompile Include="raytracer\Samplers\Hammersley.cpp">
+      <Filter>Samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Samplers\Jittered.cpp">
+      <Filter>Samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Samplers\MultiJittered.cpp">
+      <Filter>Samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Samplers\NRooks.cpp">
+      <Filter>Samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Samplers\PureRandom.cpp">
+      <Filter>Samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Samplers\Regular.cpp">
+      <Filter>Samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Samplers\Sampler.cpp">
+      <Filter>Samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Cameras\ThinLens.cpp">
+      <Filter>Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Cameras\FishEye.cpp">
+      <Filter>Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Cameras\Spherical.cpp">
+      <Filter>Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Cameras\StereoCamera.cpp">
+      <Filter>Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Lights\PointLight.cpp">
+      <Filter>Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Materials\Phong.cpp">
+      <Filter>Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\BRDFs\GlossySpecular.cpp">
+      <Filter>BRDFs</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\BRDFs\PerfectSpecular.cpp">
+      <Filter>BRDFs</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Lights\AreaLight.cpp">
+      <Filter>Lights</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="raytracer\BRDFs\BRDF.h">
@@ -214,6 +262,54 @@
     </ClInclude>
     <ClInclude Include="raytracer\Tracers\Tracer.h">
       <Filter>Tracers</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Samplers\Hammersley.h">
+      <Filter>Samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Samplers\Jittered.h">
+      <Filter>Samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Samplers\MultiJittered.h">
+      <Filter>Samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Samplers\NRooks.h">
+      <Filter>Samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Samplers\PureRandom.h">
+      <Filter>Samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Samplers\Regular.h">
+      <Filter>Samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Samplers\Sampler.h">
+      <Filter>Samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Cameras\ThinLens.h">
+      <Filter>Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Cameras\FishEye.h">
+      <Filter>Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Cameras\Spherical.h">
+      <Filter>Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Cameras\StereoCamera.h">
+      <Filter>Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Lights\PointLight.h">
+      <Filter>Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Materials\Phong.h">
+      <Filter>Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\BRDFs\GlossySpecular.h">
+      <Filter>BRDFs</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\BRDFs\PerfectSpecular.h">
+      <Filter>BRDFs</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Lights\AreaLight.h">
+      <Filter>Lights</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

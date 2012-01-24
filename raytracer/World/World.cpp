@@ -118,9 +118,10 @@ World::render_scene(void) const {
 
 
 // ------------------------------------------------------------------ clamp
-
+// explained on page 274
 RGBColor
 World::max_to_one(const RGBColor& c) const {
+
 	float max_value = max(c.r, max(c.g, c.b));
 
 	if (max_value > 1.0)
@@ -132,9 +133,10 @@ World::max_to_one(const RGBColor& c) const {
 
 // ------------------------------------------------------------------ clamp_to_color
 // Set color to red if any component is greater than one
-
+// explained on page 275
 RGBColor
 World::clamp_to_color(const RGBColor& raw_color) const {
+
 	RGBColor c(raw_color);
 
 	if (raw_color.r > 1.0 || raw_color.g > 1.0 || raw_color.b > 1.0) {
@@ -157,6 +159,7 @@ World::clamp_to_color(const RGBColor& raw_color) const {
 // explained on page 72
 void
 World::display_pixel(const int row, const int column, const RGBColor& raw_color) const {
+
 	RGBColor mapped_color;
 
 	if (vp.show_out_of_gamut)
@@ -215,6 +218,7 @@ World::hit_objects(const Ray& ray) {
 
 void
 World::delete_objects(void) {
+
 	int num_objects = objects.size();
 
 	for (int j = 0; j < num_objects; j++) {
@@ -230,6 +234,7 @@ World::delete_objects(void) {
 
 void
 World::delete_lights(void) {
+
 	int num_lights = lights.size();
 
 	for (int j = 0; j < num_lights; j++) {

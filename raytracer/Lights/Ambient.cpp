@@ -47,10 +47,10 @@ Ambient::operator= (const Ambient& rhs) {
 Ambient::~Ambient (void) {}
 
 
-// ---------------------------------------------------------------------- get_direction	
+// ---------------------------------------------------------------------- get_direction
 
 Vector3D
-Ambient::get_direction(ShadeRec& s) {
+Ambient::get_direction(ShadeRec& sr) {
 	return (Vector3D(0.0));
 }
 
@@ -60,4 +60,14 @@ Ambient::get_direction(ShadeRec& s) {
 RGBColor
 Ambient::L(ShadeRec& sr) {
 	return (ls * color);
+}
+
+
+// ---------------------------------------------------------------------- in_shadow
+
+bool
+Ambient::in_shadow(const Ray& ray, const ShadeRec& sr) const {
+
+	return true; // not implented yet
+
 }

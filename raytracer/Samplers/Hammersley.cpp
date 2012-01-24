@@ -1,9 +1,6 @@
 #include "Hammersley.h"
 #include "Maths.h"
 
-//extern float 
-//rand_float(void);
-
 // ---------------------------------------------------------------- default constructor
 
 Hammersley::Hammersley(void)
@@ -53,14 +50,14 @@ Hammersley::~Hammersley(void) {}
 
 
 // ---------------------------------------------------------------- phi
-
+// explained on page 109
 double
 Hammersley::phi(int j) {
 	double x = 0.0;
 	double f = 0.5;
 
 	while (j) {
-		x += f * (double) (j % 2);
+		x += f * (double) (j & 1);
 		j /= 2;
 		f *= 0.5; 
 	}

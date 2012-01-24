@@ -29,13 +29,22 @@ class Ambient: public Light {
 		set_color(const RGBColor& c);
 
 		void
-		set_color(const float r, const float g, const float b); 
+		set_color(const float r, const float g, const float b);
 
 		virtual Vector3D
-		get_direction(ShadeRec& s); 
+		get_direction(ShadeRec& sr);
 
 		virtual RGBColor
 		L(ShadeRec& s);
+
+		bool
+		in_shadow(const Ray& ray, const ShadeRec& sr) const;
+
+		virtual bool
+		casts_shadows(void) const;
+
+		virtual void
+		set_shadows(bool _s);
 
 	private:
 
@@ -75,5 +84,22 @@ Ambient::set_color(const float r, const float g, const float b) {
 	color.r = r; color.g = g; color.b = b;
 }
 
+
+// ---------------------------------------------------------------------- casts_shadows
+
+inline bool
+Ambient::casts_shadows() const {
+
+	return Light::casts_shadows();
+}
+
+
+// ---------------------------------------------------------------------- set_shadows
+
+inline void
+Ambient::set_shadows(bool _s) {
+
+	return Light::set_shadows(_s);
+}
 
 #endif

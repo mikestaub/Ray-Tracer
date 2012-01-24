@@ -14,7 +14,7 @@ class World;  // can't #include "World" here because World contains a camera poi
 class Camera {
 	public:
 
-		Camera();   							// default constructor
+		Camera();								// default constructor
 
 		Camera(const Camera& camera);			// copy constructor
 
@@ -23,6 +23,9 @@ class Camera {
 
 		virtual
 		~Camera();
+
+		virtual void
+		render_stereo(const World& w, float x, int pixel_offset) {};
 
 		virtual void
 		render_scene(const World& w) = 0;
@@ -57,7 +60,7 @@ class Camera {
 	protected:
 
 		Point3D			eye;				// eye point
-		Point3D			lookat; 			// lookat point
+		Point3D			lookat;				// lookat point
 		float			ra;					// roll angle
 		Vector3D		u, v, w;			// orthonormal basis vectors
 		Vector3D		up;					// up vector
@@ -66,10 +69,6 @@ class Camera {
 		Camera& 							// assignment operator
 		operator= (const Camera& camera);
 };
-
-
-// inlined access functions
-
 
 // ----------------------------------------------------------------- set_eye
 

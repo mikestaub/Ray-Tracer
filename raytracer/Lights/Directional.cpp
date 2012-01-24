@@ -66,3 +66,13 @@ RGBColor
 Directional::L(ShadeRec& s) {
 	return (ls * color);
 }
+
+
+// ---------------------------------------------------------------------- in_shadow
+
+bool
+Directional::in_shadow(const Ray& ray, const ShadeRec& sr) const {
+
+	return true; // not implented yet
+
+}

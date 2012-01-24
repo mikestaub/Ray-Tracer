@@ -57,7 +57,7 @@
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(IntDir)vc70.pdb</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level1</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -87,7 +87,7 @@
       <PreprocessorDefinitions>WIN32;__WIN32__;__WXMSW__;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>
@@ -121,17 +121,33 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="raytracer\BRDFs\BRDF.cpp" />
+    <ClCompile Include="raytracer\BRDFs\GlossySpecular.cpp" />
     <ClCompile Include="raytracer\BRDFs\Lambertian.cpp" />
+    <ClCompile Include="raytracer\BRDFs\PerfectSpecular.cpp" />
     <ClCompile Include="raytracer\Cameras\Camera.cpp" />
+    <ClCompile Include="raytracer\Cameras\FishEye.cpp" />
     <ClCompile Include="raytracer\Cameras\Pinhole.cpp" />
+    <ClCompile Include="raytracer\Cameras\Spherical.cpp" />
+    <ClCompile Include="raytracer\Cameras\StereoCamera.cpp" />
+    <ClCompile Include="raytracer\Cameras\ThinLens.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\GeometricObject.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\Plane.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\Sphere.cpp" />
     <ClCompile Include="raytracer\Lights\Ambient.cpp" />
+    <ClCompile Include="raytracer\Lights\AreaLight.cpp" />
     <ClCompile Include="raytracer\Lights\Directional.cpp" />
     <ClCompile Include="raytracer\Lights\Light.cpp" />
+    <ClCompile Include="raytracer\Lights\PointLight.cpp" />
     <ClCompile Include="raytracer\Materials\Material.cpp" />
     <ClCompile Include="raytracer\Materials\Matte.cpp" />
+    <ClCompile Include="raytracer\Materials\Phong.cpp" />
+    <ClCompile Include="raytracer\Samplers\Hammersley.cpp" />
+    <ClCompile Include="raytracer\Samplers\Jittered.cpp" />
+    <ClCompile Include="raytracer\Samplers\MultiJittered.cpp" />
+    <ClCompile Include="raytracer\Samplers\NRooks.cpp" />
+    <ClCompile Include="raytracer\Samplers\PureRandom.cpp" />
+    <ClCompile Include="raytracer\Samplers\Regular.cpp" />
+    <ClCompile Include="raytracer\Samplers\Sampler.cpp" />
     <ClCompile Include="raytracer\World\ViewPlane.cpp" />
     <ClCompile Include="raytracer\World\World.cpp" />
     <ClCompile Include="raytracer\Utilities\Matrix.cpp" />
@@ -150,17 +166,33 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="raytracer\BRDFs\BRDF.h" />
+    <ClInclude Include="raytracer\BRDFs\GlossySpecular.h" />
     <ClInclude Include="raytracer\BRDFs\Lambertian.h" />
+    <ClInclude Include="raytracer\BRDFs\PerfectSpecular.h" />
     <ClInclude Include="raytracer\Cameras\Camera.h" />
+    <ClInclude Include="raytracer\Cameras\FishEye.h" />
     <ClInclude Include="raytracer\Cameras\Pinhole.h" />
+    <ClInclude Include="raytracer\Cameras\Spherical.h" />
+    <ClInclude Include="raytracer\Cameras\StereoCamera.h" />
+    <ClInclude Include="raytracer\Cameras\ThinLens.h" />
     <ClInclude Include="raytracer\GeometricObjects\GeometricObject.h" />
     <ClInclude Include="raytracer\GeometricObjects\Plane.h" />
     <ClInclude Include="raytracer\GeometricObjects\Sphere.h" />
     <ClInclude Include="raytracer\Lights\Ambient.h" />
+    <ClInclude Include="raytracer\Lights\AreaLight.h" />
     <ClInclude Include="raytracer\Lights\Directional.h" />
     <ClInclude Include="raytracer\Lights\Light.h" />
+    <ClInclude Include="raytracer\Lights\PointLight.h" />
     <ClInclude Include="raytracer\Materials\Material.h" />
     <ClInclude Include="raytracer\Materials\Matte.h" />
+    <ClInclude Include="raytracer\Materials\Phong.h" />
+    <ClInclude Include="raytracer\Samplers\Hammersley.h" />
+    <ClInclude Include="raytracer\Samplers\Jittered.h" />
+    <ClInclude Include="raytracer\Samplers\MultiJittered.h" />
+    <ClInclude Include="raytracer\Samplers\NRooks.h" />
+    <ClInclude Include="raytracer\Samplers\PureRandom.h" />
+    <ClInclude Include="raytracer\Samplers\Regular.h" />
+    <ClInclude Include="raytracer\Samplers\Sampler.h" />
     <ClInclude Include="raytracer\World\ViewPlane.h" />
     <ClInclude Include="raytracer\World\World.h" />
     <ClInclude Include="raytracer\Utilities\Constants.h" />

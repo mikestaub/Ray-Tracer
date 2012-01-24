@@ -7,7 +7,6 @@
 
 class ShadeRec;
 
-
 //-------------------------------------------------------------------- class Light
 
 class Light {
@@ -31,6 +30,36 @@ class Light {
 
 		virtual RGBColor
 		L(ShadeRec& sr);
+
+		virtual bool
+		casts_shadows(void) const;
+
+		virtual void
+		set_shadows(bool val);
+
+		virtual bool
+		in_shadow(const Ray& ray, const ShadeRec& sr) const = 0;
+
+	private:
+
+		bool	shadows;	// does the light cast shadows or not
+
 };
+
+
+//-------------------------------------------------------------------- casts_shadows
+
+inline bool
+Light::casts_shadows() const {
+	return shadows;
+}
+
+
+//-------------------------------------------------------------------- set_shadows
+
+inline void
+Light::set_shadows(bool _s) {
+	shadows = _s;
+}
 
 #endif

@@ -4,7 +4,7 @@
 // This file contains the declaration of the class Pinhole
 
 #include "Point2D.h"
-#include "World.h"    // we can #include "World.h" here
+#include "World.h"		// we can #include "World.h" here
 
 //--------------------------------------------------------------------- class Pinhole
 
@@ -33,6 +33,9 @@ class Pinhole: public Camera {
 		Vector3D
 		get_direction(const Point2D& p) const;
 
+		void
+		render_stereo(const World& w, float x, int pixel_offset);
+
 		virtual void
 		render_scene(const World& w);
 
@@ -44,14 +47,12 @@ class Pinhole: public Camera {
 };
 
 
-
 //-------------------------------------------------------------------------- set_vpd
 
 inline void
 Pinhole::set_view_distance(float _d) {
 	d = _d;
 }
-
 
 
 //-------------------------------------------------------------------------- set_zoom

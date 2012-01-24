@@ -11,11 +11,11 @@ BRDF::BRDF(void) {}
 BRDF::BRDF(const BRDF& brdf) {}
 
 
-
 // --------------------------------------------------------------- assignment operator
 
 BRDF&
 BRDF::operator= (const BRDF& rhs) {
+
 	if (this == &rhs)
 		return (*this);
 

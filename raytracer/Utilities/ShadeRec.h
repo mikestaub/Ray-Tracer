@@ -26,6 +26,7 @@ class ShadeRec {
 		Normal				normal;				// Normal at hit point
 		Ray					ray;				// Required for specular highlights and area lights
 		int					depth;				// recursion depth
+		Vector3D			dir;				// for area lights
 		float				t;					// ray parameter
 		World&				w;					// World reference
 		RGBColor			color;

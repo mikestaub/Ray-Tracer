@@ -30,13 +30,13 @@ class Vector3D {
 		operator= (const Vector3D& rhs);
 
 		Vector3D& 												// assign a Normal to a vector
-		operator= (const Normal& rhs); 
+		operator= (const Normal& rhs);
 
 		Vector3D& 												// assign a Point3D to a vector
-		operator= (const Point3D& rhs); 
+		operator= (const Point3D& rhs);
 
 		Vector3D												// unary minus
-		operator- (void) const;									
+		operator- (void) const;
 
 		double													// length
 		length(void);
@@ -54,10 +54,10 @@ class Vector3D {
 		operator+ (const Vector3D& v) const;
 
 		Vector3D& 												// compound addition
-		operator+= (const Vector3D& v);					
+		operator+= (const Vector3D& v);
 
 		Vector3D												// subtraction
-		operator- (const Vector3D& v) const;					
+		operator- (const Vector3D& v) const;
 
 		double 													// dot product
 		operator* (const Vector3D& b) const;
@@ -66,9 +66,9 @@ class Vector3D {
 		operator^ (const Vector3D& v) const;
 
 		void 													// convert vector to a unit vector
-		normalize(void); 
+		normalize(void);
 
-		Vector3D& 												// return a unit vector, and normalize the vector												
+		Vector3D& 												// return a unit vector, and normalize the vector
 		hat(void);
 };
 

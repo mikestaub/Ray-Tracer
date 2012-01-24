@@ -30,7 +30,7 @@ ViewPlane::ViewPlane(const ViewPlane& vp)
 		show_out_of_gamut(vp.show_out_of_gamut)
 {
 	// need to do a deep copy of the sampler
-	if(sampler_ptr != NULL) {
+	if(vp.sampler_ptr != NULL) {
 		sampler_ptr = vp.sampler_ptr->clone();
 	}
 }
@@ -47,13 +47,12 @@ ViewPlane::operator=(const ViewPlane& rhs) {
 	vres				= rhs.vres;
 	s					= rhs.s;
 	num_samples			= rhs.num_samples;
-	//sampler_ptr			= rhs.sampler_ptr; // shallow copy ok here?
 	gamma				= rhs.gamma;
 	inv_gamma			= rhs.inv_gamma;
 	show_out_of_gamut	= rhs.show_out_of_gamut;
 
 	// need to do a deep copy of the sampler
-	if(sampler_ptr != NULL) {
+	if(rhs.sampler_ptr != NULL) {
 		sampler_ptr = rhs.sampler_ptr->clone();
 	}
 

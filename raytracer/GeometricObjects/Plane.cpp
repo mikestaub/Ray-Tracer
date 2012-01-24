@@ -79,3 +79,19 @@ Plane::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 
 	return(false);
 }
+
+
+// ----------------------------------------------------------------- hit
+// explained on page 301
+bool
+Plane::shadow_hit(const Ray& ray, float& tmin) const {
+
+	float t = (a - ray.o) * n / (ray.d * n);
+
+	if (t > kEpsilon) {
+		tmin = t;
+		return (true);
+	}
+	else
+		return (false);
+}

@@ -38,6 +38,9 @@ class Sphere: public GeometricObject {
 		virtual bool
 		hit(const Ray& ray, double& t, ShadeRec& s) const;
 
+		virtual bool
+		shadow_hit(const Ray& ray, float& tmin) const;
+
 	private:
 
 		Point3D 	center;   			// center coordinates as a point
