@@ -4,6 +4,7 @@
 #include "Sampler.h"
 
 class Regular: public Sampler {
+
 	public:
 
 		Regular(void);

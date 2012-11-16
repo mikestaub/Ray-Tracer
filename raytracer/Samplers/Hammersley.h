@@ -4,6 +4,7 @@
 #include "Sampler.h"
 
 class Hammersley: public Sampler {
+
 	public:
 
 		Hammersley(void);

@@ -5,6 +5,7 @@
 #include "World.h"
 
 class ThinLens: public Camera {
+
 	public:
 
 		ThinLens();

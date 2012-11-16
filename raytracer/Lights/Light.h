@@ -10,6 +10,7 @@ class ShadeRec;
 //-------------------------------------------------------------------- class Light
 
 class Light {
+
 	public:
 
 		Light(void);
@@ -40,6 +41,12 @@ class Light {
 		virtual bool
 		in_shadow(const Ray& ray, const ShadeRec& sr) const = 0;
 
+		virtual float
+		G(const ShadeRec& sr) const;
+
+		virtual float
+		pdf(const ShadeRec& sr) const;
+
 	private:
 
 		bool	shadows;	// does the light cast shadows or not
@@ -60,6 +67,22 @@ Light::casts_shadows() const {
 inline void
 Light::set_shadows(bool _s) {
 	shadows = _s;
+}
+
+
+// ---------------------------------------------------------------------- G
+// explained on page 333
+inline float
+Light::G(const ShadeRec& sr) const {
+	return 1.0;
+}
+
+
+// ---------------------------------------------------------------------- pdf
+
+inline float
+Light::pdf(const ShadeRec& sr) const {
+	return 1.0;
 }
 
 #endif

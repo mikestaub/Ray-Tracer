@@ -6,11 +6,13 @@
 //-------------------------------------------------------------------------------------- class ViewPlane
 
 class ViewPlane {
+
 	public:
-		int 			hres;						// horizontal image resolution 
+		int 			hres;						// horizontal image resolution
 		int 			vres;						// vertical image resolution
 		float			s;							// pixel size
 		int				num_samples;				// number of samples per pixel
+		int				max_depth;					// max number of reflected bounce rays
 		
 		float			gamma;						// gamma correction factor
 		float			inv_gamma;					// the inverse of the gamma correction factor
@@ -46,6 +48,9 @@ class ViewPlane {
 
 		void
 		set_sampler(Sampler* sp);
+
+		void
+		set_max_depth(int depth);
 };
 
 
@@ -87,6 +92,14 @@ ViewPlane::set_gamma(const float g) {
 inline void
 ViewPlane::set_gamut_display(const bool show) {
 	show_out_of_gamut = show;
+}
+
+
+// ------------------------------------------------------------------------------ set_max_depth
+
+inline void
+ViewPlane::set_max_depth(int depth) {
+	max_depth = depth;
 }
 
 

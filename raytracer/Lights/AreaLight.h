@@ -10,14 +10,15 @@
 #include "GeometricObject.h"
 
 class AreaLight: public Light {
+
 	public:
 
 		AreaLight(void);
 
 		AreaLight(const AreaLight& al);
 
-		virtual AreaLight*
-		clone(void);
+		virtual Light*
+		clone(void) const;
 
 		virtual
 		~AreaLight(void);
@@ -55,8 +56,7 @@ class AreaLight: public Light {
 		Material*			material_ptr;	// will be an emissive material
 		Point3D				sample_point;
 		Normal				light_normal;	// assigned in get_direction - which therefore can't be const for any light
-		Vector3D			wi;				// unit direction from hit point being shaded to sample point on light surface			
-	
+		Vector3D			wi;				// unit direction from hit point being shaded to sample point on light surface
 };
 
 

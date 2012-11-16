@@ -4,6 +4,7 @@
 #include "Tracer.h"
 
 class RayCast: public Tracer {
+
 	public:
 
 		RayCast(void);

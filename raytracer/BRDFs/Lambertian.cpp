@@ -16,7 +16,8 @@ Lambertian::Lambertian(const Lambertian& lamb)
 	:   BRDF(lamb),
 		kd(lamb.kd),
 		cd(lamb.cd)
-{}
+{
+}
 
 
 // ---------------------------------------------------------------------- clone

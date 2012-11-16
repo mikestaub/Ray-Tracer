@@ -8,8 +8,8 @@
 #include "Normal.h"
 #include "Constants.h"
 
-class PerfectSpecular: public BRDF
-{
+class PerfectSpecular: public BRDF {
+
 	public:
 
 		PerfectSpecular(void);

@@ -144,7 +144,6 @@ Sampler::setup_shuffled_indices(void) {
 
 
 // ------------------------------------------------------------------- map_samples_to_unit_disk
-
 // Maps the 2D sample points in the square [-1,1] X [-1,1] to a unit disk, using Peter Shirley's
 // concentric map function
 // explained on page 122
@@ -199,7 +198,6 @@ Sampler::map_samples_to_unit_disk(void) {
 
 
 // ------------------------------------------------------------------- map_samples_to_hemisphere
-
 // Maps the 2D sample points to 3D points on a unit hemisphere with a cosine power
 // density distribution in the polar angle
 // explained on page 129
@@ -222,7 +220,6 @@ Sampler::map_samples_to_hemisphere(const float exp) {
 
 
 // ------------------------------------------------------------------- map_samples_to_sphere
-
 // Maps the 2D sample points to 3D points on a unit sphere with a uniform density 
 // distribution over the surface
 // this is used for modelling a spherical light

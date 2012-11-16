@@ -35,7 +35,7 @@ PerfectSpecular::f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& wi) c
 // this computes wi: the direction of perfect mirror reflection
 // it's called from from the functions Reflective::shade and Transparent::shade.
 // the fabs in the last statement is for transparency
-
+// explained on page 500
 RGBColor
 PerfectSpecular::sample_f(const ShadeRec& sr, const Vector3D& wo, Vector3D& wi) const {
 

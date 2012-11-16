@@ -6,9 +6,10 @@
 #include "GlossySpecular.h"
 #include "Phong.h"
 
-//----------------------------------------------------------------------------- class Matte
+//----------------------------------------------------------------------------- class Phong
 
 class Phong: public Material {
+
 	public:
 
 		Phong(void);
@@ -42,10 +43,22 @@ class Phong: public Material {
 		set_cd(const float c);
 
 		void
+		set_cs(const RGBColor c);
+
+		void
+		set_cs(const float r, const float g, const float b);
+
+		void
+		set_cs(const float c);
+
+		void
 		set_exp(const float _e);
 
 		virtual RGBColor
 		shade(ShadeRec& sr);
+
+		virtual RGBColor
+		get_Le(ShadeRec& sr) const;
 
 	private:
 
@@ -109,6 +122,30 @@ inline void
 Phong::set_cd(const float c) {
 	ambient_brdf->set_cd(c);
 	diffuse_brdf->set_cd(c);
+	specular_brdf->set_cs(c);
+}
+
+
+// ---------------------------------------------------------------- set_cs
+
+inline void
+Phong::set_cs(const RGBColor c) {
+	specular_brdf->set_cs(c);
+}
+
+
+// ---------------------------------------------------------------- set_cs
+
+inline void
+Phong::set_cs(const float r, const float g, const float b) {
+	specular_brdf->set_cs(r, g, b);
+}
+
+
+// ---------------------------------------------------------------- set_cs
+
+inline void
+Phong::set_cs(const float c) {
 	specular_brdf->set_cs(c);
 }
 

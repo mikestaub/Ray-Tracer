@@ -4,6 +4,7 @@
 #include "Light.h"
 
 class Ambient: public Light {
+
 	public:
 
 		Ambient(void);
@@ -45,6 +46,12 @@ class Ambient: public Light {
 
 		virtual void
 		set_shadows(bool _s);
+
+		virtual float
+		G(const ShadeRec& sr) const;
+
+		virtual float
+		pdf(const ShadeRec& sr) const;
 
 	private:
 

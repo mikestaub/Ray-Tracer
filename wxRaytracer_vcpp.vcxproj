@@ -13,15 +13,18 @@
   <PropertyGroup Label="Globals">
     <ProjectName>wxRaytracer</ProjectName>
     <ProjectGuid>{7B411091-CB1C-4663-A16E-30D3FC0207AE}</ProjectGuid>
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and $(VisualStudioVersion) == ''">$(VCTargetsPath11)</VCTargetsPath>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -77,6 +80,7 @@
       <ProgramDatabaseFile>$(OutDir)wxRaytracer.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -101,6 +105,7 @@
       <DebugInformationFormat>
       </DebugInformationFormat>
       <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;__WXMSW__;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -117,6 +122,7 @@
       <ProgramDatabaseFile>$(OutDir)wxRaytracer.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -130,17 +136,34 @@
     <ClCompile Include="raytracer\Cameras\Spherical.cpp" />
     <ClCompile Include="raytracer\Cameras\StereoCamera.cpp" />
     <ClCompile Include="raytracer\Cameras\ThinLens.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\BBox.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\Box.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\Compound.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\FlatMeshTriangle.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\GeometricObject.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\Grid.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\Instance.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\MeshTriangle.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\OpenCylinder.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\Plane.cpp" />
+    <ClCompile Include=".\raytracer\GeometricObjects\MyRectangle.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\SmoothMeshTriangle.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\SmoothTriangle.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\Sphere.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\Torus.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\Triangle.cpp" />
     <ClCompile Include="raytracer\Lights\Ambient.cpp" />
+    <ClCompile Include="raytracer\Lights\AmbientOccluder.cpp" />
     <ClCompile Include="raytracer\Lights\AreaLight.cpp" />
     <ClCompile Include="raytracer\Lights\Directional.cpp" />
+    <ClCompile Include="raytracer\Lights\EnvironmentLight.cpp" />
     <ClCompile Include="raytracer\Lights\Light.cpp" />
     <ClCompile Include="raytracer\Lights\PointLight.cpp" />
+    <ClCompile Include="raytracer\Materials\Emissive.cpp" />
     <ClCompile Include="raytracer\Materials\Material.cpp" />
     <ClCompile Include="raytracer\Materials\Matte.cpp" />
     <ClCompile Include="raytracer\Materials\Phong.cpp" />
+    <ClCompile Include="raytracer\Materials\Reflective.cpp" />
     <ClCompile Include="raytracer\Samplers\Hammersley.cpp" />
     <ClCompile Include="raytracer\Samplers\Jittered.cpp" />
     <ClCompile Include="raytracer\Samplers\MultiJittered.cpp" />
@@ -148,6 +171,11 @@
     <ClCompile Include="raytracer\Samplers\PureRandom.cpp" />
     <ClCompile Include="raytracer\Samplers\Regular.cpp" />
     <ClCompile Include="raytracer\Samplers\Sampler.cpp" />
+    <ClCompile Include="raytracer\Tracers\AreaLighting.cpp" />
+    <ClCompile Include="raytracer\Tracers\Whitted.cpp" />
+    <ClCompile Include="raytracer\Utilities\Maths.cpp" />
+    <ClCompile Include="raytracer\Utilities\Mesh.cpp" />
+    <ClCompile Include="raytracer\Utilities\ply.c" />
     <ClCompile Include="raytracer\World\ViewPlane.cpp" />
     <ClCompile Include="raytracer\World\World.cpp" />
     <ClCompile Include="raytracer\Utilities\Matrix.cpp" />
@@ -175,17 +203,34 @@
     <ClInclude Include="raytracer\Cameras\Spherical.h" />
     <ClInclude Include="raytracer\Cameras\StereoCamera.h" />
     <ClInclude Include="raytracer\Cameras\ThinLens.h" />
+    <ClInclude Include="raytracer\GeometricObjects\BBox.h" />
+    <ClInclude Include="raytracer\GeometricObjects\Box.h" />
+    <ClInclude Include="raytracer\GeometricObjects\Compound.h" />
+    <ClInclude Include="raytracer\GeometricObjects\FlatMeshTriangle.h" />
     <ClInclude Include="raytracer\GeometricObjects\GeometricObject.h" />
+    <ClInclude Include="raytracer\GeometricObjects\Grid.h" />
+    <ClInclude Include="raytracer\GeometricObjects\Instance.h" />
+    <ClInclude Include="raytracer\GeometricObjects\MeshTriangle.h" />
+    <ClInclude Include="raytracer\GeometricObjects\OpenCylinder.h" />
     <ClInclude Include="raytracer\GeometricObjects\Plane.h" />
+    <ClInclude Include=".\raytracer\GeometricObjects\MyRectangle.h" />
+    <ClInclude Include="raytracer\GeometricObjects\SmoothMeshTriangle.h" />
+    <ClInclude Include="raytracer\GeometricObjects\SmoothTriangle.h" />
     <ClInclude Include="raytracer\GeometricObjects\Sphere.h" />
+    <ClInclude Include="raytracer\GeometricObjects\Torus.h" />
+    <ClInclude Include="raytracer\GeometricObjects\Triangle.h" />
     <ClInclude Include="raytracer\Lights\Ambient.h" />
+    <ClInclude Include="raytracer\Lights\AmbientOccluder.h" />
     <ClInclude Include="raytracer\Lights\AreaLight.h" />
     <ClInclude Include="raytracer\Lights\Directional.h" />
+    <ClInclude Include="raytracer\Lights\EnvironmentLight.h" />
     <ClInclude Include="raytracer\Lights\Light.h" />
     <ClInclude Include="raytracer\Lights\PointLight.h" />
+    <ClInclude Include="raytracer\Materials\Emissive.h" />
     <ClInclude Include="raytracer\Materials\Material.h" />
     <ClInclude Include="raytracer\Materials\Matte.h" />
     <ClInclude Include="raytracer\Materials\Phong.h" />
+    <ClInclude Include="raytracer\Materials\Reflective.h" />
     <ClInclude Include="raytracer\Samplers\Hammersley.h" />
     <ClInclude Include="raytracer\Samplers\Jittered.h" />
     <ClInclude Include="raytracer\Samplers\MultiJittered.h" />
@@ -193,6 +238,10 @@
     <ClInclude Include="raytracer\Samplers\PureRandom.h" />
     <ClInclude Include="raytracer\Samplers\Regular.h" />
     <ClInclude Include="raytracer\Samplers\Sampler.h" />
+    <ClInclude Include="raytracer\Tracers\AreaLighting.h" />
+    <ClInclude Include="raytracer\Tracers\Whitted.h" />
+    <ClInclude Include="raytracer\Utilities\Mesh.h" />
+    <ClInclude Include="raytracer\Utilities\ply.h" />
     <ClInclude Include="raytracer\World\ViewPlane.h" />
     <ClInclude Include="raytracer\World\World.h" />
     <ClInclude Include="raytracer\Utilities\Constants.h" />

@@ -5,6 +5,7 @@
 #include "World.h"
 
 class Spherical: public Camera {
+
 	public:
 
 		Spherical();

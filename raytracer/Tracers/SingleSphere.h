@@ -4,6 +4,7 @@
 #include "Tracer.h"
 
 class SingleSphere: public Tracer {
+
 	public:
 
 		SingleSphere(void);

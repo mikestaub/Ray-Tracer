@@ -6,11 +6,12 @@
 #include "ShadeRec.h"
 
 class Material {
+
 	public:
 
 		Material(void);
 
-		Material(const Material& material); 
+		Material(const Material& material);
 
 		virtual Material*
 		clone(void) const = 0;
@@ -26,6 +27,9 @@ class Material {
 
 		virtual RGBColor
 		path_shade(ShadeRec& sr);
+
+		virtual RGBColor
+		get_Le(ShadeRec& sr) const;
 
 	protected:
 

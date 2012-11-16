@@ -71,3 +71,20 @@ Ambient::in_shadow(const Ray& ray, const ShadeRec& sr) const {
 	return true; // not implented yet
 
 }
+
+
+// ---------------------------------------------------------------------- G
+
+float
+Ambient::G(const ShadeRec& sr) const{
+	return 5.5; //?
+}
+
+
+// ---------------------------------------------------------------------- pdf
+
+float
+Ambient::pdf(const ShadeRec& sr) const{
+
+	return 5.5;//?
+}

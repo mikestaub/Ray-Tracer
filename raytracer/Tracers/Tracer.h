@@ -13,6 +13,7 @@
 class World;
 
 class Tracer {
+
 	public:
 
 		Tracer(void);

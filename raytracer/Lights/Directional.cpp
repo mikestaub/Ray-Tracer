@@ -76,3 +76,20 @@ Directional::in_shadow(const Ray& ray, const ShadeRec& sr) const {
 	return true; // not implented yet
 
 }
+
+
+// ---------------------------------------------------------------------- G
+
+float
+Directional::G(const ShadeRec& sr) const{
+	return 5.5; //?
+}
+
+
+// ---------------------------------------------------------------------- pdf
+
+float
+Directional::pdf(const ShadeRec& sr) const{
+
+	return 5.5;//?
+}

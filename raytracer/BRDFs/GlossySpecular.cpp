@@ -14,12 +14,17 @@ GlossySpecular::GlossySpecular(void)
 
 // ---------------------------------------------------------------------- copy constructor
 
-GlossySpecular::GlossySpecular(const GlossySpecular& lamb)
-	:	BRDF(lamb),
-		ks(lamb.ks),
-		cs(lamb.cs),
-		exp(lamb.exp)
-{}
+GlossySpecular::GlossySpecular(const GlossySpecular& gloss)
+	:	BRDF(gloss),
+		ks(gloss.ks),
+		cs(gloss.cs),
+		exp(gloss.exp)
+{
+	// need to do a deep copy of the sampler
+	if(gloss.sampler_ptr != NULL) {
+		sampler_ptr = gloss.sampler_ptr->clone();
+	}
+}
 
 
 // ---------------------------------------------------------------------- clone
@@ -48,6 +53,11 @@ GlossySpecular::operator= (const GlossySpecular& rhs) {
 	ks = rhs.ks;
 	cs = rhs.cs;
 	exp = rhs.exp;
+
+	// need to do a deep copy of the sampler
+	if(rhs.sampler_ptr != NULL) {
+		sampler_ptr = rhs.sampler_ptr->clone();
+	}
 	
 	return (*this);
 }

@@ -12,6 +12,7 @@ class World;  // can't #include "World" here because World contains a camera poi
 //--------------------------------------------------------------------- class Camera
 
 class Camera {
+
 	public:
 
 		Camera();								// default constructor

@@ -63,7 +63,7 @@ MultiJittered::~MultiJittered(void) {}
 // which take arguments, are defined here
 // explained on page 107
 int
-rand_int(int min, int max) {
+MultiJittered::rand_int(int min, int max) {
 
 	if(min == max)
 		return max;

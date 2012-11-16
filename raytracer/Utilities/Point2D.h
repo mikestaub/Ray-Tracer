@@ -2,6 +2,7 @@
 #define __POINT_2D__
 
 class Point2D {
+
 	public:
 
 		float	x, y;

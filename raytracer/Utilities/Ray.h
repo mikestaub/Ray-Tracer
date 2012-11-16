@@ -5,10 +5,12 @@
 #include "Vector3D.h"
 
 class Ray {
+
 	public:
 
 		Point3D			o;  	// origin
 		Vector3D		d; 		// direction
+		int				depth;  // ray depth, for reflections
 
 		Ray(void);
 

@@ -10,6 +10,7 @@ typedef enum {
 } ViewingType;
 
 class StereoCamera: public Camera {
+
 	public:
 
 		StereoCamera();

@@ -49,3 +49,11 @@ RGBColor
 Material::path_shade(ShadeRec& sr) {
 	return (black);
 }
+
+
+// ---------------------------------------------------------------- get_Le
+
+RGBColor
+Material::get_Le(ShadeRec& sr) const{
+	return (black);
+}

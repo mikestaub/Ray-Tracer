@@ -11,6 +11,7 @@
 using std::vector;
 
 class Sampler {
+
 	public:
 
 		Sampler(void);

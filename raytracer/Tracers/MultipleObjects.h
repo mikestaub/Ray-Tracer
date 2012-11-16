@@ -4,6 +4,7 @@
 #include "Tracer.h"
 
 class MultipleObjects: public Tracer {
+
 	public:
 
 		MultipleObjects(void);

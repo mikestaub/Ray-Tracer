@@ -17,6 +17,7 @@ class World;
 #include "RGBColor.h"
 
 class ShadeRec {
+
 	public:
 
 		bool				hit_an_object;		// Did the ray hit an object?

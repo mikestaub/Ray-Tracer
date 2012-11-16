@@ -125,3 +125,11 @@ Phong::shade(ShadeRec& sr) {
 
 	return (L);
 }
+
+
+// ---------------------------------------------------------------- get_Le
+
+RGBColor
+Phong::get_Le(ShadeRec& sr) const{
+	return (black);
+}

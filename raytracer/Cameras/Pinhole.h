@@ -9,6 +9,7 @@
 //--------------------------------------------------------------------- class Pinhole
 
 class Pinhole: public Camera {
+
 	public:
 
 		Pinhole();

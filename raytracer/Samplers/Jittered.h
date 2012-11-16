@@ -4,6 +4,7 @@
 #include "Sampler.h"
 
 class Jittered: public Sampler {
+
 	public:
 
 		Jittered(void);

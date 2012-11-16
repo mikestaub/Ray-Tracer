@@ -5,6 +5,7 @@
 #include "World.h"
 
 class FishEye: public Camera {
+
 	public:
 
 		FishEye();

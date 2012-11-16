@@ -4,6 +4,7 @@
 #include "Sampler.h"
 
 class MultiJittered: public Sampler {
+
 	public:
 
 		MultiJittered(void);
@@ -19,6 +20,8 @@ class MultiJittered: public Sampler {
 
 		virtual MultiJittered*
 		clone(void) const;
+
+		int rand_int(int min, int max);
 
 		virtual
 		~MultiJittered(void);

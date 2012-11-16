@@ -4,6 +4,7 @@
 #include "Sampler.h"
 
 class NRooks: public Sampler {
+
 	public:
 
 		NRooks(void);

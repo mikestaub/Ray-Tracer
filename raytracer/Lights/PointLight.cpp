@@ -83,3 +83,20 @@ PointLight::in_shadow(const Ray& ray, const ShadeRec& sr) const {
 
 	return false;
 }
+
+
+// ---------------------------------------------------------------------- G
+
+float
+PointLight::G(const ShadeRec& sr) const{
+	return 5.5; //?
+}
+
+
+// ---------------------------------------------------------------------- pdf
+
+float
+PointLight::pdf(const ShadeRec& sr) const{
+
+	return 5.5;//?
+}

@@ -5,11 +5,12 @@
 #include "Sampler.h"
 
 class GlossySpecular: public BRDF {
+
 	public:
 
 		GlossySpecular(void);
 
-		GlossySpecular(const GlossySpecular& lamb);
+		GlossySpecular(const GlossySpecular& gloss);
 
 		virtual GlossySpecular*
 		clone(void) const;

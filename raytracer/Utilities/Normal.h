@@ -7,8 +7,8 @@
 #include "Vector3D.h"
 #include "Point3D.h"
 
-class Normal
-{
+class Normal {
+
 	public:
 
 		double	x, y, z;

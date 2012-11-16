@@ -5,6 +5,7 @@
 #include "ShadeRec.h"
 
 class PointLight: public Light {
+
 	public:
 
 		PointLight(void);
@@ -40,6 +41,12 @@ class PointLight: public Light {
 
 		bool
 		in_shadow(const Ray& ray, const ShadeRec& sr) const;
+
+		virtual float
+		G(const ShadeRec& sr) const;
+
+		virtual float
+		pdf(const ShadeRec& sr) const;
 
 	private:
 		

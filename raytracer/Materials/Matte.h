@@ -7,6 +7,7 @@
 //----------------------------------------------------------------------------- class Matte
 
 class Matte: public Material {
+
 	public:
 
 		Matte(void);
@@ -38,6 +39,12 @@ class Matte: public Material {
 
 		virtual RGBColor
 		shade(ShadeRec& sr);
+
+		virtual RGBColor
+		area_light_shade(ShadeRec& sr);
+
+		virtual RGBColor
+		get_Le(ShadeRec& sr) const;
 
 	private:
 

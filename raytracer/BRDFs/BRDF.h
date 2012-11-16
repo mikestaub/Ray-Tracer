@@ -10,6 +10,7 @@
 #include "ShadeRec.h"
 
 class BRDF {
+
 	public:
 
 		BRDF(void);

@@ -95,3 +95,4 @@ Plane::shadow_hit(const Ray& ray, float& tmin) const {
 	else
 		return (false);
 }
+

@@ -4,6 +4,7 @@
 #include "Sampler.h"
 
 class PureRandom: public Sampler {
+
 	public:
 
 		PureRandom(void);
